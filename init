@@ -1,0 +1,38 @@
+# This script initializes the shell environment with various tools.
+# It checks for the existence of each tool before activating it.
+
+# Initialize 'mise' version manager
+if command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+fi
+
+# Initialize zoxide, a smart cd command
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+# Initialize atuin, a a shell history database
+if command -v atuin &> /dev/null; then
+  export ATUIN_NOBIND="true"
+  eval "$(atuin init zsh)"
+  bindkey '^r' _atuin_search_widget
+fi
+
+# Initialize starship, a highly configurable prompt
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+fi
+
+# FZF (fuzzy finder) key bindings for Zsh
+if command -v fzf &> /dev/null; then
+  # The Zsh-specific key bindings are usually located in a 'zsh' directory or are part of the 'init zsh' output.
+  # If you are using omakub-mj, these files should be sourced from the defaults/zsh/ directory.
+  # Alternatively, fzf's own init function can handle this.
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fi
+
+# Run fastfetch to display system information
+# Note: This runs every time a new terminal is opened.
+if command -v fastfetch &> /dev/null; then
+  fastfetch
+fi

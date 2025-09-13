@@ -1,0 +1,20 @@
+# Completion settings for Zsh
+# Immediately add a trailing slash when autocompleting symlinks to directories
+setopt mark_dirs
+
+
+# Show all autocomplete results at once
+setopt auto_list
+
+# If there are more than 200 possible completions, ask to show them all
+# Note: Zsh handles this behavior differently, so this option is not needed.
+
+# Show extra file information when completing, like `ls -F`
+# Note: The Zsh completion system already provides this information.
+
+# Key bindings for history search
+# Arrow keys match what you've typed so far against your command history
+bindkey "\e[A" history-search-backward
+bindkey "\e[B" history-search-forward
+bindkey "\e[C" forward-char
+bindkey "\e[D" backward-char

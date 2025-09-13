@@ -1,0 +1,28 @@
+# History control
+# Append to the history file instead of overwriting it
+setopt APPEND_HISTORY
+
+# Ignore duplicates in the history
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
+# Set history size
+HISTSIZE=32768
+SAVEHIST=${HISTSIZE}
+
+# Autocompletion
+# This is handled by Zsh's built-in completion system
+# No need to source bash-completion files
+
+# Set complete path
+export PATH="$HOME/.local/bin:$HOME/.local/share/omakub/bin:$PATH"
+
+# Zsh handles command hashing automatically and intelligently, so set +h is not needed.
+
+export OMAKUB_PATH="/home/$USER/.local/share/omakub"
+
+# These variables are likely for a Bash-specific prompt system.
+# The recommended approach for a Zsh prompt is to use Starship.
+# The lines below are commented out as they're not needed with Starship.
+# USE_POWERLINE="true"
+# HAS_WIDECHARS="false"
