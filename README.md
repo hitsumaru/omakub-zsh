@@ -23,7 +23,7 @@ Este repositório contém minhas configurações Zsh, adaptadas para o Manjaro K
     sh -c "$(curl -fsSL [https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh))"
     ```
 
-3.  **Instale os plugins e o tema:**
+4.  **Instale os plugins e o tema:**
     ```bash
     git clone --depth=1 [https://github.com/romkatv/powerlevel10k.git](https://github.com/romkatv/powerlevel10k.git) ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
