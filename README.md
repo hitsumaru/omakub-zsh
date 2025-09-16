@@ -1,19 +1,54 @@
-## Omakub ZSH configs
+# Omakub Zsh Configs
 
-[Omakub 2.0](https://omarchy.org/) comes default with Bash. But I prefer ZSH (personal preference, Bash is perfectly fine). So I decided to make my own overrides for ZSH.
+Este repositório contém minhas configurações Zsh, adaptadas para o Manjaro KDE a partir do projeto Omakub-mj. As configurações incluem o Oh My Zsh, o tema Powerlevel10k e vários plugins para um ambiente de terminal moderno e eficiente.
 
-### Install
+## Pré-requisitos
+* Manjaro KDE
 
-```Bash
-yay -S zsh zoxide
-chsh -s $(which zsh)
-git clone https://github.com/hitsumaru/omakub-zsh.git ~/config/zsh
-ln -s ~/.config/zsh/.zshrc ~/.zshrc 
-```
+## Instalação
 
-### New Features
+1.  **Instale os pacotes necessários:**
+    ```bash
+    yay -S zsh zoxide
+    ```
 
-* support for [Atuin](https://atuin.sh/) for history cloud syncing (you can keep all your history across installations).
+2.  **Defina o Zsh como seu shell padrão:**
+    ```bash
+    chsh -s $(which zsh)
+    ```
+    (Você precisará reiniciar o terminal para que esta mudança seja efetivada)
+
+3.  **Instale o Oh My Zsh:**
+    ```bash
+    sh -c "$(curl -fsSL [https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh))"
+    ```
+
+3.  **Instale os plugins e o tema:**
+    ```bash
+    git clone --depth=1 [https://github.com/romkatv/powerlevel10k.git](https://github.com/romkatv/powerlevel10k.git) ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+    git clone [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    
+    git clone [https://github.com/zsh-users/zsh-syntax-highlighting.git](https://github.com/zsh-users/zsh-syntax-highlighting.git) ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    ```
 
 
-* source from `~/.config/zsh/secrets` where you can keep your OpenAI Keys and other secrets Envs. Make sure to `chmod 600 secrets` to make it extra safe.
+5.  **Clone este repositório e crie o link simbólico:**
+    ```bash
+    git clone [https://github.com/hitsumaru/omakub-zsh.git](https://github.com/hitsumaru/omakub-zsh.git) ~/.config/zsh
+    ln -sf ~/.config/zsh/.zshrc ~/.zshrc
+    ```
+    
+6.  **Configure o seu prompt Powerlevel10k:**
+    Abra um novo terminal e execute:
+    ```bash
+    p10k configure
+    ```
+
+## Recursos
+
+* **Prompt Moderno:** O Powerlevel10k oferece um prompt elegante e informativo.
+* **Autocompletar Inteligente:** Use `zsh-autosuggestions` para prever comandos e `zsh-syntax-highlighting` para destacar a sintaxe em tempo real.
+* **Gestão de Secrets:** Mantenha suas variáveis de ambiente e chaves de API em um arquivo separado para maior segurança.
+    * Crie o arquivo `~/.config/zsh/secrets`.
+    * Defina as permissões de acesso com `chmod 600 secrets`.
