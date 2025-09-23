@@ -20,7 +20,7 @@ Este repositório contém minhas configurações Zsh, adaptadas para o Manjaro K
 
 3.  **Instale o Oh My Zsh:**
     ```bash
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh")
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     ```
 
 4.  **Instale os plugins e o tema:**
