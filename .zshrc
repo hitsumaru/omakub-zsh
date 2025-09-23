@@ -48,7 +48,6 @@ source ~/.config/zsh/shell
 source ~/.config/zsh/init
 source ~/.config/zsh/envs
 source ~/.config/zsh/aliases
-source ~/.config/zsh/prompt
 source ~/.config/zsh/inputrc
 [[ -r ~/.config/zsh/secrets ]] && source ~/.config/zsh/secrets
 
@@ -56,8 +55,9 @@ source ~/.config/zsh/inputrc
 # source ~/.local/share/omakub/defaults/zsh/rc
 
 # Load custom completion settings.
-source ~/.config/zsh/completions.zsh
-source ~/.config/zsh/options.zsh
+#source ~/.config/zsh/completions.zsh
+#source ~/.config/zsh/options.zsh
+
 # --- 3. Environment Variables ---
 #
 # Define environment variables after loading frameworks and configs.
